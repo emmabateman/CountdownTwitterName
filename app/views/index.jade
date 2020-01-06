@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  button(id='signin', onclick='window.location.href = "127.0.0.1:3000/twitter/request-token";') Sign in with Twitter!
