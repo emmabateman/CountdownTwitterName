@@ -12,7 +12,7 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var keys = require('../keys.js');
+var keys = require('./keys.js');
 
 //configure passport
 passport.use(new Strategy({
