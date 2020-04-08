@@ -2,12 +2,12 @@ var express = require('express');
 var router = express.Router();
 
 var Twitter = require("node-twitter-api");
-var keys = require("../keys.js")
+var keys = require("../../keys.js")
 
 var twitter = new Twitter({
 	consumerKey: keys['consumer_key'],
 	consumerSecret: keys['consumer_secret'],
-        callback: 'http://127.0.0.1:3000/twitter/return'
+        callback: 'http://ec2-52-43-207-96.us-west-2.compute.amazonaws.com:3000/twitter/return'
 });
 
 var _requestSecret
