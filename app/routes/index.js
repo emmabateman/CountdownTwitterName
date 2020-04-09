@@ -4,17 +4,17 @@ var router = express.Router();
 var Twitter = require("node-twitter-api");
 var keys = require("../../keys.js")
 
-var twitter = new Twitter({
-	consumerKey: keys['consumer_key'],
-	consumerSecret: keys['consumer_secret'],
-        callback: 'http://ec2-52-43-207-96.us-west-2.compute.amazonaws.com:3000/twitter/return'
+twitter = new Twitter({
+    consumerKey: keys['consumer_key'],
+    consumerSecret: keys['consumer_secret'],
+    callback: keys['host'] + 'twitter/return'
 });
 
 var _requestSecret
 
 /* GET home page. */
 router.get('/', function(req, res) {
-    res.render('index', { title: 'Express' });
+    res.render('index', { title: 'Hewwo???' });
 });
 
 router.get('/twitter', function(req, res) {
@@ -51,19 +51,19 @@ router.get('/twitter/return', function(req, res) {
 			}
                         else {
 	                    res.render('return', { user: user.name });
-			    twitter.account("update_profile", {
-			        name: "Test"
-			    },
-		            accessToken,
-			    accessSecret,
-			    function(error, data, response) {
-				if (error) {
-				    res.status(500).send(err);
-			        }
-				else {
-				    console.log(data);
-				}
-			    });
+//			    twitter.account("update_profile", {
+//			        name: "Test"
+//			    },
+//		            accessToken,
+//			    accessSecret,
+//			    function(error, data, response) {
+//				if (error) {
+//				    res.status(500).send(err);
+//			        }
+//				else {
+//				    console.log(data);
+//				}
+//			    });
 			}
                     });
 	    }
